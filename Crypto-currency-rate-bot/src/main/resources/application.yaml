@@ -1,0 +1,34 @@
+telegram:
+  bot:
+    #    не вписывайте данные, так как можете отправить в публичный репозиторий
+    #    используйте переменные среды для установки значений
+    username: ${BOT_NAME}
+    token: ${BOT_TOKEN}
+    notify:
+      delay:
+        value: 10
+        unit: MINUTES
+
+binance:
+  api:
+    getPrice: https://api.binance.com/api/v3/avgPrice?symbol=BTCUSDT
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/cryptobot
+    username: postgres
+    password: Dimat12345
+    driverClassName: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: update
+    show-sql: true
+
+app:
+  rate update frequency: 120_000
+  minimum notification time: 600_000
+
+
